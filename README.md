@@ -1,4 +1,7 @@
-# StemLab Web v5.1 — Music Intelligence Lab
+# StemLab Web v5.3 — Music Intelligence Lab
+
+
+> **Recomendação de uso:** sempre que possível, utilize o upload direto de um arquivo MP3. A importação por link do YouTube depende de um serviço remoto e pode apresentar instabilidades ou maior tempo de espera.
 
 O **StemLab** é uma aplicação musical executada diretamente no navegador. Ela separa uma música em stems, cria um mixer sincronizado e adiciona ferramentas de estudo musical. Arquivos enviados pelo usuário são processados localmente; a entrada opcional por YouTube usa um pequeno serviço remoto apenas para obter o áudio antes da separação.
 
@@ -137,7 +140,7 @@ A variável `YOUTUBE_API_BASE` no GitHub continua opcional e pode sobrescrever e
 
 ## Importação por link do YouTube
 
-O GitHub Pages não consegue acessar diretamente os fluxos de áudio do YouTube a partir do navegador. Por isso o StemLab v5.1 inclui a pasta `youtube-service/`, um serviço Node.js separado que apenas:
+O GitHub Pages não consegue acessar diretamente os fluxos de áudio do YouTube a partir do navegador. Por isso o StemLab v5.3 inclui a pasta `youtube-service/`, um serviço Node.js separado que apenas:
 
 1. recebe o link do YouTube;
 2. resolve o vídeo;

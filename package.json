@@ -1,9 +1,9 @@
 {
   "name": "stemlab-web",
-  "version": "5.1.0",
+  "version": "5.3.0",
   "private": true,
   "type": "module",
-  "description": "StemLab Web v5.1 - separacao de stems, mixer, analise musical, Turbo corrigido e importacao opcional do YouTube.",
+  "description": "StemLab Web v5.3 - separacao de stems, mixer, analise musical, Turbo corrigido e importacao opcional do YouTube.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

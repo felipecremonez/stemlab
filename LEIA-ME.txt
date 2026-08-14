@@ -1,4 +1,4 @@
-STEMLAB WEB v5.1 — USO RÁPIDO
+STEMLAB WEB v5.3 — USO RÁPIDO
 
 SITE: https://felipecremonez.github.io/stemlab/
 
@@ -13,7 +13,7 @@ PARA USAR O SITE
 8. Clique em INICIAR ANÁLISE.
 9. Aguarde a separação e use o Music Lab.
 
-CORREÇÃO TURBO v5.1
+CORREÇÃO TURBO v5.3
 - Overlap Turbo ajustado para 0.10.
 - Stems são sanitizadas antes da reprodução.
 - O player usa preview WAV mesmo quando o download final é MP3, evitando o problema de áudio parado/silencioso observado na v5.
@@ -23,3 +23,8 @@ O GitHub Pages sozinho não consegue obter áudio do YouTube. A pasta youtube-se
 
 IMPORTANTE
 Use somente conteúdo que você tenha autorização para processar.
+
+
+RECOMENDAÇÃO — PREFIRA O UPLOAD POR MP3
+----------------------------------------
+Para maior estabilidade e menor tempo de espera, prefira enviar o arquivo MP3 diretamente pela opção ARQUIVO. A importação pelo YouTube pode apresentar instabilidades e demora adicional por depender de um serviço remoto.

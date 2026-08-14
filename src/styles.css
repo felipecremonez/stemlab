@@ -378,7 +378,7 @@ footer > span { text-align: right; }.footer-brand { display: flex; align-items: 
 }
 .preset-spacer { flex: 1; }
 
-/* v5.1 — entrada por arquivo / YouTube */
+/* v5.3 — entrada por arquivo / YouTube + recomendação de MP3 */
 .input-source-shell { min-height: 432px; display: flex; flex-direction: column; gap: 10px; }
 .input-source-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .input-source-tabs button { min-height: 46px; border: 0; background: var(--bg-soft); color: var(--muted); display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; font: 600 .66rem 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
@@ -387,7 +387,14 @@ footer > span { text-align: right; }.footer-brand { display: flex; align-items: 
 .youtube-import-panel { flex: 1; min-height: 376px; border: 1px solid var(--line); background: radial-gradient(circle at 80% 20%, color-mix(in srgb, #ff314a 11%, transparent), transparent 38%), var(--bg-soft); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: clamp(24px, 5vw, 58px); }
 .youtube-symbol { width: 58px; height: 58px; display: grid; place-items: center; margin-bottom: 22px; border: 1px solid color-mix(in srgb, #ff314a 55%, var(--line)); color: #ff4960; background: color-mix(in srgb, #ff314a 8%, transparent); }
 .youtube-import-panel h3 { margin: 8px 0 8px; font-size: clamp(1.55rem, 3vw, 2.35rem); letter-spacing: -.045em; }
-.youtube-import-panel > p { max-width: 660px; margin: 0 0 24px; color: var(--muted); line-height: 1.65; font-size: .82rem; }
+.youtube-import-panel > p { max-width: 660px; margin: 0 0 18px; color: var(--muted); line-height: 1.65; font-size: .82rem; }
+.youtube-recommendation { width: 100%; margin: 0 0 18px; padding: 13px 14px; border: 1px solid color-mix(in srgb, var(--signal) 34%, var(--line)); background: color-mix(in srgb, var(--signal) 5%, var(--panel)); display: grid; grid-template-columns: 34px minmax(0,1fr) auto; gap: 12px; align-items: center; }
+.youtube-recommendation-icon { width: 34px; height: 34px; border: 1px solid color-mix(in srgb, var(--signal) 38%, var(--line)); display: grid; place-items: center; color: var(--signal); background: var(--signal-soft); }
+.youtube-recommendation strong { display: block; margin-bottom: 4px; color: var(--text); font-size: .7rem; letter-spacing: -.01em; }
+.youtube-recommendation span { display: block; max-width: 720px; color: var(--muted); font-size: .63rem; line-height: 1.55; }
+.youtube-recommendation span b { color: var(--text); font-weight: 700; }
+.youtube-recommendation button { min-height: 38px; padding: 0 12px; border: 1px solid var(--signal); background: transparent; color: var(--signal); display: inline-flex; align-items: center; justify-content: center; gap: 7px; cursor: pointer; white-space: nowrap; font: 700 .5rem 'DM Mono', monospace; letter-spacing: .05em; }
+.youtube-recommendation button:hover { background: var(--signal-soft); }
 .youtube-url-row { width: 100%; display: grid; grid-template-columns: 42px minmax(0,1fr) auto; align-items: center; border: 1px solid var(--line-strong); background: var(--bg); }
 .youtube-url-row > svg { justify-self: center; color: var(--muted-2); }
 .youtube-url-row input { min-width: 0; height: 54px; border: 0; border-left: 1px solid var(--line); padding: 0 16px; background: transparent; color: var(--text); outline: none; font: .72rem 'DM Mono', monospace; }
@@ -402,6 +409,8 @@ footer > span { text-align: right; }.footer-brand { display: flex; align-items: 
   .input-source-shell { min-height: 350px; }
   .input-source-shell .drop-zone, .youtube-import-panel { min-height: 300px; }
   .youtube-import-panel { padding: 24px 18px; }
+  .youtube-recommendation { grid-template-columns: 32px minmax(0,1fr); }
+  .youtube-recommendation button { grid-column: 1 / -1; min-height: 42px; }
   .youtube-url-row { grid-template-columns: 38px minmax(0,1fr); }
   .youtube-url-row button { grid-column: 1 / -1; min-height: 48px; border-left: 0; border-top: 1px solid var(--line); }
 }

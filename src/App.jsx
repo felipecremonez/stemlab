@@ -771,6 +771,14 @@ export default function App() {
                       <span className="mini-label">IMPORTAR / YOUTUBE</span>
                       <h3>Cole o link da música</h3>
                       <p>O StemLab busca somente o áudio e o entrega ao mesmo motor de separação usado no upload.</p>
+                      <div className="youtube-recommendation">
+                        <div className="youtube-recommendation-icon"><Icon name="alert" size={18} /></div>
+                        <div>
+                          <strong>Para melhor desempenho, prefira o arquivo MP3.</strong>
+                          <span>A importação pelo YouTube pode apresentar instabilidades e levar mais tempo para preparar a música. Sempre que possível, use a opção <b>Arquivo</b> e envie o MP3 diretamente.</span>
+                        </div>
+                        <button type="button" onClick={() => setInputMode('file')}><Icon name="upload" size={14} /> USAR ARQUIVO MP3</button>
+                      </div>
                       <div className="youtube-url-row"><Icon name="link" size={18} /><input value={youtubeUrl} onChange={(e) => setYoutubeUrl(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') importFromYoutube(); }} placeholder="https://www.youtube.com/watch?v=..." /><button disabled={!youtubeUrl || Boolean(youtubeImport && youtubeImport.progress < 100)} onClick={importFromYoutube}>{youtubeImport && youtubeImport.progress < 100 ? 'IMPORTANDO…' : 'IMPORTAR'}</button></div>
                       {youtubeImport && <div className="youtube-progress"><span style={{ width: `${youtubeImport.progress || 8}%` }} /><small>{youtubeImport.message}</small></div>}
                       <small className="youtube-note">Use somente conteúdo que você tenha autorização para processar. A importação depende do serviço remoto configurado no projeto.</small>
