@@ -1,0 +1,74 @@
+name: Deploy StemLab Web
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout StemLab
+        uses: actions/checkout@v5
+
+      - name: Checkout Demucs JS
+        uses: actions/checkout@v5
+        with:
+          repository: bakkot/demucs-js
+          path: vendor/demucs-js
+          lfs: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Ajustar Demucs para modos Turbo / Equilibrio / Studio
+        run: node scripts/patch-demucs.mjs vendor/demucs-js/web/worker.ts
+
+      - name: Instalar e compilar motor Demucs para navegador
+        working-directory: vendor/demucs-js
+        run: |
+          npm ci
+          npm run build-web
+
+      - name: Preparar motor no public
+        run: |
+          rm -rf public/demucs-engine
+          mkdir -p public/demucs-engine
+          cp -R vendor/demucs-js/build-web/. public/demucs-engine/
+          cp vendor/demucs-js/LICENSE.md public/demucs-engine/THIRD_PARTY_LICENSE.md
+
+      - name: Instalar dependencias do StemLab
+        run: npm install --no-audit --no-fund
+
+      - name: Build React
+        env:
+          VITE_YOUTUBE_API_BASE: ${{ vars.YOUTUBE_API_BASE }}
+        run: npm run build
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload do site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+      - name: Publicar GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

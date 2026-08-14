@@ -1,0 +1,7 @@
+node_modules/
+dist/
+vendor/
+.DS_Store
+*.log
+public/demucs-engine/*
+!public/demucs-engine/README.txt

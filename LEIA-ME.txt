@@ -1,0 +1,25 @@
+STEMLAB WEB v5.1 — USO RÁPIDO
+
+SITE: https://felipecremonez.github.io/stemlab/
+
+PARA USAR O SITE
+1. Abra o endereço acima.
+2. Escolha ARQUIVO ou YOUTUBE.
+3. ARQUIVO: selecione/arraste sua música.
+4. YOUTUBE: cole o link e clique em IMPORTAR (requer o serviço remoto configurado pelo dono do projeto).
+5. Escolha Turbo, Equilíbrio ou Studio.
+6. Escolha saída Simples ou Studio.
+7. Escolha MP3 ou WAV.
+8. Clique em INICIAR ANÁLISE.
+9. Aguarde a separação e use o Music Lab.
+
+CORREÇÃO TURBO v5.1
+- Overlap Turbo ajustado para 0.10.
+- Stems são sanitizadas antes da reprodução.
+- O player usa preview WAV mesmo quando o download final é MP3, evitando o problema de áudio parado/silencioso observado na v5.
+
+YOUTUBE
+O GitHub Pages sozinho não consegue obter áudio do YouTube. A pasta youtube-service/ contém o serviço Node.js remoto. Veja README.md para publicar no Render e configurar a variável YOUTUBE_API_BASE no GitHub Actions. Depois dessa configuração, os visitantes continuam usando o site sem instalar nada.
+
+IMPORTANTE
+Use somente conteúdo que você tenha autorização para processar.

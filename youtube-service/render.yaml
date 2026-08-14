@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: stemlab-youtube-service
+    runtime: node
+    plan: free
+    buildCommand: npm install --no-audit --no-fund
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://felipecremonez.github.io
+      - key: MAX_YOUTUBE_DURATION_SECONDS
+        value: 900
