@@ -126,6 +126,15 @@ Com o Music Lab aberto e sem um campo de formulário selecionado:
 9. Após o processamento, use o Music Lab para ouvir, comparar, transpor, alterar velocidade, criar loops, marcar partes e exportar stems ou trechos.
 
 
+
+## Serviço do YouTube já conectado
+
+Esta versão já possui como endereço padrão do serviço remoto:
+
+`https://stemlab-youtube-service.onrender.com`
+
+A variável `YOUTUBE_API_BASE` no GitHub continua opcional e pode sobrescrever esse endereço no futuro, mas não é necessária para o funcionamento normal desta versão.
+
 ## Importação por link do YouTube
 
 O GitHub Pages não consegue acessar diretamente os fluxos de áudio do YouTube a partir do navegador. Por isso o StemLab v5.1 inclui a pasta `youtube-service/`, um serviço Node.js separado que apenas:

@@ -410,7 +410,7 @@ export default function App() {
     setError('');
     if (!isYoutubeUrl(youtubeUrl)) return setError('Cole um link válido do YouTube.');
     if (!youtubeApiConfigured()) {
-      return setError('O importador do YouTube precisa do serviço remoto do StemLab configurado. Veja a seção "YouTube" do README para publicar o serviço uma única vez.');
+      return setError('O serviço do YouTube não está disponível no momento. Atualize a página e tente novamente.');
     }
     try {
       setYoutubeImport({ progress: 0, message: 'Preparando importação…' });
@@ -899,6 +899,6 @@ function readableError(error) {
   if (/memory|allocation|out of memory/i.test(text)) return 'O navegador ficou sem memória para processar esta faixa. Feche outras abas ou teste uma música menor.';
   if (/webgpu|device lost/i.test(text)) return 'A GPU interrompeu o processamento. Recarregue a página ou tente novamente pelo modo CPU/compatibilidade.';
   if (/decode|codec|EncodingError/i.test(text)) return 'O navegador não conseguiu decodificar esse formato de áudio. Tente MP3, WAV ou outro arquivo.';
-  if (/YOUTUBE_API_NOT_CONFIGURED|serviço remoto do YouTube/i.test(text)) return 'O importador do YouTube ainda não está conectado ao serviço remoto. Publique a pasta youtube-service e configure VITE_YOUTUBE_API_BASE conforme o README.';
+  if (/YOUTUBE_API_NOT_CONFIGURED|serviço remoto do YouTube/i.test(text)) return 'O serviço do YouTube não está disponível no momento. Atualize a página e tente novamente.';
   return text;
 }

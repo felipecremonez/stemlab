@@ -1,4 +1,4 @@
-const CACHE = 'stemlab-shell-v5';
+const CACHE = 'stemlab-shell-v5.2';
 const MODEL_CACHE = 'demucs-weights-cache';
 const CORE = ['./', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
 

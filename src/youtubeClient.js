@@ -1,4 +1,5 @@
-const DEFAULT_API_BASE = (import.meta.env.VITE_YOUTUBE_API_BASE || '').trim();
+const BUILT_IN_API_BASE = 'https://stemlab-youtube-service.onrender.com';
+const DEFAULT_API_BASE = (import.meta.env.VITE_YOUTUBE_API_BASE || BUILT_IN_API_BASE).trim();
 
 function apiBase() {
   const saved = localStorage.getItem('stemlab-youtube-api-base')?.trim();
